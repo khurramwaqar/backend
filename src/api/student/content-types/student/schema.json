@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student_first_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "student_last_name": {
+      "type": "string",
+      "required": true
+    },
+    "student_id_number": {
+      "type": "integer",
+      "required": true
+    },
+    "student_poster": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "student_email": {
+      "type": "email",
+      "required": true
+    },
+    "student_phone_number": {
+      "type": "biginteger",
+      "required": true
+    },
+    "student_shift": {
+      "type": "enumeration",
+      "enum": [
+        "Morning",
+        "Evening",
+        "Night",
+        "Early Morning"
+      ],
+      "required": true
+    },
+    "student_password": {
+      "type": "password",
+      "required": true,
+      "private": true,
+      "minLength": 5
+    },
+    "attendences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::attendence.attendence"
+    }
+  }
+}

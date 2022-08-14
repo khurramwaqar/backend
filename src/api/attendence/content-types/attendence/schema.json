@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendences",
+  "info": {
+    "singularName": "attendence",
+    "pluralName": "attendences",
+    "displayName": "Attendence"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "i_am_present": {
+      "type": "boolean",
+      "required": true
+    },
+    "student_first_name": {
+      "type": "string"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student.student"
+    }
+  }
+}
